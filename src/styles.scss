@@ -1,1 +1,98 @@
+// Include theming for Angular Material with `mat.theme()`.
+// This Sass mixin will define CSS variables that are used for styling Angular Material
+// components according to the Material 3 design spec.
+// Learn more about theming and how to use it for your application's
+// custom components at https://material.angular.dev/guide/theming
+@use '@angular/material' as mat;
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --backgroud-default: #000000;
+  --text-color-default: #ffffff;
+  --default-green-color: #4DB614;
+
+  button {
+    border: none;
+    border-radius: 8px;
+    padding: 15px;
+    background-color: #4DB614;
+    color: black;
+    font-weight: bolder;
+    text-transform: uppercase;
+    
+    &:hover {
+      background-color: #2e7508;
+      cursor: pointer;
+    }
+  }
+
+  a {
+    color: var(--default-green-color);
+  }
+}
+
+.custom-form-field {
+  --mat-sys-corner-extra-small: 8px;
+  /* 1. Cor da borda normal (em repouso) */
+  .mdc-notched-outline__leading,
+  .mdc-notched-outline__notch,
+  .mdc-notched-outline__trailing {
+    border-color: #4DB614 !important;
+  }
+
+  /* 2. Cor da label normal (em repouso) */
+  .mat-mdc-form-field-label {
+    color: #4DB614 !important;
+  }
+
+  /* 3. Cor da borda QUANDO FOCADO */
+  &.mat-form-field-focused {
+    .mdc-notched-outline__leading,
+    .mdc-notched-outline__notch,
+    .mdc-notched-outline__trailing {
+      border-color: #00ff0d !important; /* Sua cor aqui */
+    }
+
+    /* 4. Cor da label QUANDO FOCADO */
+    .mat-mdc-form-field-label {
+      color: #3cff00 !important;
+    }
+  }
+}
+
+html {
+  height: 100%;
+  @include mat.theme(
+    (
+      // color: (
+      //   primary: mat.$cyan-palette,
+      //   tertiary: mat.$orange-palette,
+      // ),
+      typography: Roboto,
+      density: 0,
+    )
+  );
+}
+
+body {
+  // Default the application to a light color theme. This can be changed to
+  // `dark` to enable the dark color theme, or to `light dark` to defer to the
+  // user's system settings.
+  // color-scheme: dark;
+
+  // Set a default background, font and text colors for the application using
+  // Angular Material's system-level CSS variables. Learn more about these
+  // variables at https://material.angular.dev/guide/system-variables
+  background-color: var(--backgroud-default);
+  color: var(--text-color-default);
+  font: var(--mat-sys-body-medium);
+
+  // Reset the user agent margin.
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
 /* You can add global styles to this file, and also import other style files */

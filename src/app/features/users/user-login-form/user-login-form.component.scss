@@ -1,0 +1,24 @@
+form {
+  width: 100%;
+}
+
+mat-form-field, button {
+  margin: 0 auto;
+  width: 75%;
+}
+
+.span-link {
+  font-weight: bold;
+  color: var(--default-green-color);
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.logo-banner {
+  background-image: url('/images/background-field.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}

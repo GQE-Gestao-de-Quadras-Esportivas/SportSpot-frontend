@@ -1,0 +1,26 @@
+<div class="grid grid-cols-3 h-screen">
+  <div class="bg-black col-span-1 justify-center content-center">
+    <div class="flex flex-col items-center">
+      <img class="mb-64" width="360px" src="images/logo-360x90.png" alt="" />
+
+        <form class="flex flex-col text-center" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <mat-form-field appearance="outline" class="custom-form-field">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Digite seu email" />
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="custom-form-field">
+            <mat-label>Senha</mat-label>
+            <input matInput type="password" placeholder="Digite sua senha" />
+          </mat-form-field>
+          <button type="submit">Entrar</button>
+          <p>
+            Ainda não está cadastrado?
+            <span class="span-link" (click)="goToRegister()">Registre-se</span>
+          </p>
+        </form>
+    </div>
+  </div>
+  <div class="col-span-2 logo-banner">
+    <br />
+  </div>
+</div>

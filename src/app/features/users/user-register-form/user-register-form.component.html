@@ -1,0 +1,132 @@
+<div class="grid grid-cols-3 h-screen">
+  <div class="bg-black col-span-1 justify-center content-center">
+    <div class="flex flex-col items-center">
+      <img class="mb-64" width="360px" src="images/logo-360x90.png" alt="" />
+
+      <form class="flex flex-col text-center" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="outline" class="custom-form-field">
+          <mat-label>Nome</mat-label>
+          <input
+            matInput
+            [formControl]="registerForm.controls.name"
+            placeholder="Digite seu nome completo"
+          />
+          @if (
+            registerForm.controls.name.touched && registerForm.controls.name.errors?.['required']
+          ) {
+            <small class="error-message">(O nome é obrigatório)</small>
+          }
+          @if (
+            registerForm.controls.name.touched && registerForm.controls.name.errors?.['minlength']
+          ) {
+            <small class="error-message">(O nome deve ter no mínimo 3 caracteres)</small>
+          }
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="custom-form-field">
+          <mat-label>CPF</mat-label>
+          <input
+            matInput
+            [formControl]="registerForm.controls.document"
+            placeholder="Digite seu CPF"
+          />
+          @if (
+            registerForm.controls.document.touched &&
+            registerForm.controls.document.errors?.['required']
+          ) {
+            <small class="error-message">(O CPF é obrigatório)</small>
+          }
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="custom-form-field">
+          <mat-label>Celular</mat-label>
+          <input
+            matInput
+            [formControl]="registerForm.controls.phone_number"
+            placeholder="Digite seu número de celular"
+          />
+          @if (
+            registerForm.controls.phone_number.touched &&
+            registerForm.controls.phone_number.errors?.['required']
+          ) {
+            <small class="error-message">(O número é obrigatório)</small>
+          }
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="custom-form-field">
+          <mat-label>Email</mat-label>
+          <input
+            matInput
+            [formControl]="registerForm.controls.email"
+            placeholder="Digite seu email"
+          />
+          @if (
+            registerForm.controls.email.touched &&
+            registerForm.controls.email.errors?.['required']
+          ) {
+            <small class="error-message">(O número é obrigatório)</small>
+          }
+          @if (
+            registerForm.controls.email.touched &&
+            registerForm.controls.email.errors?.['email']
+          ) {
+            <small class="error-message">(Você inseriu um email inválido)</small>
+          }
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="custom-form-field">
+          <mat-label>Senha</mat-label>
+          <input
+            matInput
+            [formControl]="registerForm.controls.password"
+            type="password"
+            placeholder="Digite sua senha"
+          />
+          @if (
+            registerForm.controls.password.touched &&
+            registerForm.controls.password.errors?.['required']
+          ) {
+            <small class="error-message">(A senha é obrigatória)</small>
+          }
+          @if (
+            registerForm.controls.password.touched &&
+            registerForm.controls.password.errors?.['minlength']
+          ) {
+            <small class="error-message">(A senha deve ter no mínimo 8 caracteres)</small>
+          }
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="custom-form-field">
+          <mat-label>Confirmar Senha</mat-label>
+          <input
+            matInput
+            [formControl]="registerForm.controls.confirm_password"
+            type="password"
+            placeholder="Digite sua senha"
+          />
+          @if (
+            registerForm.controls.confirm_password.touched &&
+            registerForm.controls.confirm_password.errors?.['required']
+          ) {
+            <small class="error-message">(A senha é obrigatória)</small>
+          }
+          @if (
+            registerForm.controls.confirm_password.touched &&
+            registerForm.controls.confirm_password.errors?.['minlength']
+          ) {
+            <small class="error-message">(A senha deve ter no mínimo 8 caracteres)</small>
+          }
+          @if (
+            registerForm.controls.confirm_password.touched &&
+            registerForm.controls.confirm_password.value !== registerForm.controls.password.value
+          ) {
+            <small class="error-message">(As senhas não coincidem)</small>
+          }
+        </mat-form-field>
+        <button type="submit">Cadastrar</button>
+        <p>
+          Já está cadastrado?
+          <span class="span-link" (click)="goToLogin()">Entrar</span>
+        </p>
+      </form>
+    </div>
+  </div>
+  <div class="col-span-2 logo-banner">
+    <br />
+  </div>
+</div>

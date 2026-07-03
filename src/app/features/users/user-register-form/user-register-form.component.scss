@@ -1,0 +1,41 @@
+form {
+  width: 100%;
+}
+
+mat-form-field, button {
+  margin: 0 auto;
+  width: 75%;
+}
+
+.span-link {
+  font-weight: bold;
+  color: var(--default-green-color);
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.logo-banner {
+  background-image: url('/images/background-field.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.reduce-margin-bottom {
+  margin-bottom: -18px;
+}
+
+input.ng-invalid.ng-touched {
+  border: 1px solid #dc3545;
+  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+  outline: none;
+}
+
+.error-message {
+  color: #dc3545;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  display: block;
+}

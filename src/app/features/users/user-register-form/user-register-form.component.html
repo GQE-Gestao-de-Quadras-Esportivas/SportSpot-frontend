@@ -1,5 +1,5 @@
 <div class="grid grid-cols-3 h-screen">
-  <div class="bg-black col-span-1 justify-center content-center">
+  <div class="form-side bg-black justify-center content-center">
     <div class="flex flex-col items-center">
       <img class="mb-64" width="360px" src="images/logo-360x90.png" alt="" />
 
@@ -37,6 +37,16 @@
           }
         </mat-form-field>
         <mat-form-field appearance="outline" class="custom-form-field">
+          <mat-label>Data de Nascimento</mat-label>
+          <input matInput type="date" [formControl]="registerForm.controls.date_of_birth" />
+          @if (
+            registerForm.controls.date_of_birth.touched &&
+            registerForm.controls.date_of_birth.errors?.['required']
+          ) {
+            <small class="error-message">(O CPF é obrigatório)</small>
+          }
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="custom-form-field">
           <mat-label>Celular</mat-label>
           <input
             matInput
@@ -58,14 +68,12 @@
             placeholder="Digite seu email"
           />
           @if (
-            registerForm.controls.email.touched &&
-            registerForm.controls.email.errors?.['required']
+            registerForm.controls.email.touched && registerForm.controls.email.errors?.['required']
           ) {
             <small class="error-message">(O número é obrigatório)</small>
           }
           @if (
-            registerForm.controls.email.touched &&
-            registerForm.controls.email.errors?.['email']
+            registerForm.controls.email.touched && registerForm.controls.email.errors?.['email']
           ) {
             <small class="error-message">(Você inseriu um email inválido)</small>
           }
@@ -126,7 +134,5 @@
       </form>
     </div>
   </div>
-  <div class="col-span-2 logo-banner">
-    <br />
-  </div>
+  <div class="h-full logo-banner"></div>
 </div>

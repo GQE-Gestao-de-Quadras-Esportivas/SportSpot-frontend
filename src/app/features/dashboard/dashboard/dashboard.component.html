@@ -1,0 +1,431 @@
+<aside class="flex flex-col h-screen">
+  <h4 class="brand self-center">SportSpot</h4>
+  <div>
+    <!-- <div class="bg-slate-200/50 p-3 rounded-xl flex items-center gap-3 mb-6 border border-slate-100">
+        <div class="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center border border-slate-200">
+          <i class="pi pi-percentage text-slate-700 text-sm"></i>
+        </div>
+        <div>
+          <h4 class="text-xs font-bold text-slate-800 leading-tight">Elite Sports Complex</h4>
+          <span class="text-[10px] text-slate-400 font-bold tracking-wider uppercase">FACILITY MANAGER</span>
+        </div>
+      </div> -->
+
+    <nav class="flex flex-col">
+      <button
+        href="#"
+        class="flex items-center gap-3 px-4 py-2.5 bg-[#4ADE80] text-slate-900 font-bold rounded-xl text-sm shadow-sm"
+      >
+        <i class="pi pi-th-large text-base"></i> Dashboard
+      </button>
+      <button
+        href="#"
+        class="flex items-center gap-3 px-4 py-2.5 text-slate-500 hover:bg-slate-100 hover:text-slate-800 font-semibold rounded-xl text-sm transition-colors"
+      >
+        <i class="pi pi-calendar text-base"></i> Schedules
+      </button>
+      <button
+        href="#"
+        class="flex items-center gap-3 px-4 py-2.5 text-slate-500 hover:bg-slate-100 hover:text-slate-800 font-semibold rounded-xl text-sm transition-colors"
+      >
+        <i class="pi pi-building text-base"></i> Facilities
+      </button>
+      <button
+        href="#"
+        class="flex items-center gap-3 px-4 py-2.5 text-slate-500 hover:bg-slate-100 hover:text-slate-800 font-semibold rounded-xl text-sm transition-colors"
+      >
+        <i class="pi pi-chart-bar text-base"></i> Analytics
+      </button>
+      <button
+        href="#"
+        class="flex items-center gap-3 px-4 py-2.5 text-slate-500 hover:bg-slate-100 hover:text-slate-800 font-semibold rounded-xl text-sm transition-colors"
+      >
+        <i class="pi pi-wallet text-base"></i> Payments
+      </button>
+    </nav>
+  </div>
+
+  <div class="flex flex-col space">
+    <button
+      class="w-full bg-black text-white py-3 px-4 rounded-xl font-bold text-sm flex items-center justify-center gap-2 shadow-sm hover:bg-slate-900 transition-colors"
+    >
+      <i class="pi pi-map"></i> View Live Map
+    </button>
+    <button
+      class="w-full flex items-center gap-3 px-4 py-2 text-slate-500 hover:text-slate-800 font-bold text-sm transition-colors"
+    >
+      <i class="pi pi-sign-out"></i> Logout
+    </button>
+  </div>
+</aside>
+
+<header class="h-20 flex items-center justify-between px-10">
+  <div class="relative w-96">
+    <i class="pi pi-search absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
+    <input
+      type="text"
+      placeholder="Search facilities or bookings..."
+      class="w-full pl-11 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-full text-sm focus:outline-none focus:border-slate-400 text-slate-800 transition-colors"
+    />
+  </div>
+
+  <div class="flex items-center gap-6">
+    <div class="flex items-center gap-4">
+      <a href="#" class="text-sm font-semibold text-slate-600 hover:text-slate-900">Support</a>
+      <a href="#" class="text-sm font-semibold text-slate-600 hover:text-slate-900">Help Center</a>
+    </div>
+
+    <button
+      class="bg-[#15803D] hover:bg-[#166534] text-white px-5 py-2.5 rounded-xl font-bold text-sm flex items-center gap-2 transition-colors shadow-sm"
+    >
+      <i class="pi pi-plus"></i> New Booking
+    </button>
+
+    <div class="flex items-center gap-4 border-l border-slate-200 pl-6 text-slate-600">
+      <button class="hover:text-slate-900 relative p-1">
+        <i class="pi pi-bell text-lg"></i>
+        <span class="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
+      </button>
+      <button class="hover:text-slate-900 p-1"><i class="pi pi-cog text-lg"></i></button>
+      <img
+        src="https://avatar.iran.liara.run/public/30"
+        alt="Avatar"
+        class="w-9 h-9 rounded-full border border-slate-200 object-cover ml-1"
+      />
+    </div>
+  </div>
+</header>
+
+<mat-card class="position-card">
+  <mat-card-content>
+    <div class="p-10 space-y-8">
+      <div class="flex justify-between items-start">
+        <div>
+          <h1 class="text-3xl font-bold text-slate-900 tracking-tight">Dashboard do Gestor</h1>
+          <p class="text-sm text-slate-500 mt-1">
+            Bem-vindo de volta, aqui está o resumo do Elite Sports Complex hoje.
+          </p>
+        </div>
+        <div
+          class="flex items-center gap-2 border border-slate-200 bg-white px-4 py-2.5 rounded-xl text-sm font-bold shadow-sm text-slate-800"
+        >
+          <i class="pi pi-calendar text-slate-400"></i>
+          <span>24 de Maio, 2024</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-3 gap-6">
+        <div
+          class="bg-white p-6 rounded-2xl border border-slate-200 flex flex-col justify-between h-52 shadow-sm"
+        >
+          <div class="flex justify-between items-start">
+            <div
+              class="w-10 h-10 bg-[#4ADE80] rounded-xl flex items-center justify-center text-emerald-900"
+            >
+              <i class="pi pi-chart-bar text-lg"></i>
+            </div>
+            <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full"
+              >+12%</span
+            >
+          </div>
+          <div>
+            <span class="text-xs font-bold text-slate-400 block mb-1">Ocupação Total</span>
+            <span class="text-5xl font-extrabold tracking-tight text-slate-900"
+              >84<span class="text-2xl font-bold text-slate-500">%</span></span
+            >
+          </div>
+          <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+            <div class="bg-[#15803D] h-full w-[84%] rounded-full"></div>
+          </div>
+        </div>
+
+        <div
+          class="bg-black p-6 rounded-2xl flex flex-col justify-between h-52 shadow-md text-white"
+        >
+          <div class="flex justify-between items-start">
+            <div
+              class="w-10 h-10 bg-[#1E293B] rounded-xl flex items-center justify-center text-slate-400"
+            >
+              <i class="pi pi-wallet text-lg"></i>
+            </div>
+            <span class="text-xs font-bold text-[#4ADE80] bg-black px-1 py-1">+8.4%</span>
+          </div>
+          <div class="space-y-0.5">
+            <span class="text-[11px] font-semibold text-slate-400 block">Receita Mensal (Mai)</span>
+            <span class="text-4xl font-extrabold tracking-tight block">R$ 42.850</span>
+          </div>
+          <span class="text-[11px] text-slate-400 font-medium">Meta: R$ 50.000 (85.7%)</span>
+        </div>
+
+        <div
+          class="bg-white p-6 rounded-2xl border border-slate-200 flex flex-col justify-between h-52 shadow-sm"
+        >
+          <div class="flex justify-between items-start">
+            <div
+              class="w-10 h-10 bg-slate-50 border border-slate-200 rounded-xl flex items-center justify-center text-slate-600"
+            >
+              <i class="pi pi-calendar-plus text-lg"></i>
+            </div>
+          </div>
+          <div>
+            <span class="text-xs font-bold text-slate-400 block mb-1">Novas Reservas (24h)</span>
+            <span class="text-5xl font-extrabold tracking-tight text-slate-900">28</span>
+          </div>
+          <div class="flex items-center -space-x-1.5 overflow-hidden">
+            <img
+              class="w-7 h-7 rounded-full border-2 border-white object-cover"
+              src="https://avatar.iran.liara.run/public/1"
+              alt="User"
+            />
+            <img
+              class="w-7 h-7 rounded-full border-2 border-white object-cover"
+              src="https://avatar.iran.liara.run/public/2"
+              alt="User"
+            />
+            <img
+              class="w-7 h-7 rounded-full border-2 border-white object-cover"
+              src="https://avatar.iran.liara.run/public/3"
+              alt="User"
+            />
+            <div
+              class="w-7 h-7 bg-[#4ADE80] rounded-full border-2 border-white flex items-center justify-center text-[10px] font-bold text-emerald-950"
+            >
+              +25
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-3 gap-6">
+        <div
+          class="col-span-2 bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between h-96"
+        >
+          <div class="flex justify-between items-center">
+            <h3 class="text-lg font-bold text-slate-900">Ocupação Semanal</h3>
+            <div class="relative">
+              <select
+                class="text-xs font-bold text-slate-600 bg-slate-50 border border-slate-200 rounded-xl px-4 py-2 pr-8 appearance-none focus:outline-none cursor-pointer"
+              >
+                <option>Últimos 7 dias</option>
+              </select>
+              <i
+                class="pi pi-chevron-down absolute right-3 top-1/2 -translate-y-1/2 text-[10px] text-slate-500 pointer-events-none"
+              ></i>
+            </div>
+          </div>
+
+          <div
+            class="flex-1 flex items-center justify-center text-slate-300 border border-dashed border-slate-100 my-4 rounded-xl"
+          ></div>
+
+          <div class="flex justify-between items-end px-4 text-xs font-bold text-slate-400">
+            <span>SEG</span><span>TER</span><span>QUA</span><span>QUI</span><span>SEX</span
+            ><span class="text-slate-900 font-extrabold bg-slate-100 px-2 py-0.5 rounded-md"
+              >SAB</span
+            ><span>DOM</span>
+          </div>
+        </div>
+
+        <div
+          class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between h-96"
+        >
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Status das Quadras</h3>
+
+          <div class="space-y-3 flex-1 overflow-y-auto pr-1">
+            <div
+              class="flex items-center justify-between p-3 border border-slate-100 bg-slate-50/50 rounded-xl"
+            >
+              <div class="flex items-center gap-3">
+                <div
+                  class="w-10 h-10 bg-[#4ADE80] rounded-xl text-emerald-950 font-bold text-sm flex items-center justify-center"
+                >
+                  Q1
+                </div>
+                <div>
+                  <h4 class="text-xs font-bold text-slate-800">Quadra Central</h4>
+                  <p class="text-[9px] text-slate-400 font-bold uppercase tracking-wider">
+                    Tennis Pro
+                  </p>
+                </div>
+              </div>
+              <span
+                class="text-[10px] font-bold bg-[#4ADE80]/80 text-emerald-950 px-2.5 py-1.5 rounded-full uppercase tracking-wider text-center min-w-[70px]"
+                >Em Uso</span
+              >
+            </div>
+
+            <div
+              class="flex items-center justify-between p-3 border border-slate-100 bg-slate-50/50 rounded-xl"
+            >
+              <div class="flex items-center gap-3">
+                <div
+                  class="w-10 h-10 bg-slate-100 border border-slate-200 rounded-xl text-slate-700 font-bold text-sm flex items-center justify-center"
+                >
+                  Q2
+                </div>
+                <div>
+                  <h4 class="text-xs font-bold text-slate-800">Quadra Norte</h4>
+                  <p class="text-[9px] text-slate-400 font-bold uppercase tracking-wider">Padel</p>
+                </div>
+              </div>
+              <span
+                class="text-[10px] font-bold bg-slate-200/70 text-slate-600 px-2.5 py-1.5 rounded-full uppercase tracking-wider text-center min-w-[70px]"
+                >Disponível</span
+              >
+            </div>
+
+            <div
+              class="flex items-center justify-between p-3 border border-slate-100 bg-slate-50/50 rounded-xl"
+            >
+              <div class="flex items-center gap-3">
+                <div
+                  class="w-10 h-10 bg-red-50 border border-red-100 rounded-xl text-red-600 font-bold text-sm flex items-center justify-center"
+                >
+                  Q3
+                </div>
+                <div>
+                  <h4 class="text-xs font-bold text-slate-800">Quadra Coberta</h4>
+                  <p class="text-[9px] text-slate-400 font-bold uppercase tracking-wider">
+                    Multisports
+                  </p>
+                </div>
+              </div>
+              <span
+                class="text-[10px] font-bold bg-red-50 text-red-600 border border-red-100 px-2.5 py-1.5 rounded-full uppercase tracking-wider text-center min-w-[70px]"
+                >Manutenção</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+        <div class="p-6 flex justify-between items-center border-b border-slate-100">
+          <h3 class="text-xl font-bold text-slate-900">Próximos Agendamentos</h3>
+          <a
+            href="#"
+            class="text-sm font-bold text-emerald-600 hover:text-emerald-700 transition-colors"
+            >Ver Agenda Completa</a
+          >
+        </div>
+
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr
+              class="bg-slate-50/70 border-b border-slate-200/80 text-xs font-bold text-slate-500 tracking-wider"
+            >
+              <th class="py-4 px-6 font-semibold">Cliente</th>
+              <th class="py-4 px-6 font-semibold">Horário</th>
+              <th class="py-4 px-6 font-semibold">Quadra</th>
+              <th class="py-4 px-6 font-semibold">Modalidade</th>
+              <th class="py-4 px-6 text-right font-semibold">Ações</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100 text-sm text-slate-700 font-medium">
+            <tr class="hover:bg-slate-50/40 transition-colors">
+              <td class="py-4 px-6 flex items-center gap-3">
+                <div
+                  class="w-9 h-9 rounded-full bg-[#0F172A] text-white font-bold text-xs flex items-center justify-center uppercase"
+                >
+                  RM
+                </div>
+                <div>
+                  <h4 class="font-bold text-slate-900">Ricardo Mendonça</h4>
+                  <p class="text-xs text-slate-400">ID: #8294</p>
+                </div>
+              </td>
+              <td class="py-4 px-6 text-slate-600">
+                <div class="flex items-center gap-2">
+                  <i class="pi pi-clock text-slate-400 text-base"></i>
+                  <span>14:00 - 15:30</span>
+                </div>
+              </td>
+              <td class="py-4 px-6 text-slate-900 font-medium">Quadra Central (Q1)</td>
+              <td class="py-4 px-6">
+                <span
+                  class="text-[10px] font-extrabold bg-[#0B132B] text-white px-3 py-1 rounded-full uppercase tracking-wide"
+                  >TENNIS</span
+                >
+              </td>
+              <td class="py-4 px-6 text-right">
+                <button
+                  class="text-slate-400 hover:text-slate-700 p-2 rounded-lg hover:bg-slate-50"
+                >
+                  <i class="pi pi-ellipsis-v"></i>
+                </button>
+              </td>
+            </tr>
+
+            <tr class="hover:bg-slate-50/40 transition-colors">
+              <td class="py-4 px-6 flex items-center gap-3">
+                <div
+                  class="w-9 h-9 rounded-full bg-[#4ADE80] text-emerald-950 font-bold text-xs flex items-center justify-center uppercase"
+                >
+                  LA
+                </div>
+                <div>
+                  <h4 class="font-bold text-slate-900">Lucas Almeida</h4>
+                  <p class="text-xs text-slate-400">ID: #8295</p>
+                </div>
+              </td>
+              <td class="py-4 px-6 text-slate-600">
+                <div class="flex items-center gap-2">
+                  <i class="pi pi-clock text-slate-400 text-base"></i>
+                  <span>15:30 - 16:30</span>
+                </div>
+              </td>
+              <td class="py-4 px-6 text-slate-900 font-medium">Quadra Norte (Q2)</td>
+              <td class="py-4 px-6">
+                <span
+                  class="text-[10px] font-extrabold bg-slate-200 text-slate-700 px-3 py-1 rounded-full uppercase tracking-wide"
+                  >PADEL</span
+                >
+              </td>
+              <td class="py-4 px-6 text-right">
+                <button
+                  class="text-slate-400 hover:text-slate-700 p-2 rounded-lg hover:bg-slate-50"
+                >
+                  <i class="pi pi-ellipsis-v"></i>
+                </button>
+              </td>
+            </tr>
+
+            <tr class="hover:bg-slate-50/40 transition-colors">
+              <td class="py-4 px-6 flex items-center gap-3">
+                <div
+                  class="w-9 h-9 rounded-full bg-slate-200 text-slate-700 font-bold text-xs flex items-center justify-center uppercase"
+                >
+                  FS
+                </div>
+                <div>
+                  <h4 class="font-bold text-slate-900">Fernanda Silva</h4>
+                  <p class="text-xs text-slate-400">ID: #8296</p>
+                </div>
+              </td>
+              <td class="py-4 px-6 text-slate-600">
+                <div class="flex items-center gap-2">
+                  <i class="pi pi-clock text-slate-400 text-base"></i>
+                  <span>16:00 - 17:30</span>
+                </div>
+              </td>
+              <td class="py-4 px-6 text-slate-900 font-medium">Quadra Sul (Q4)</td>
+              <td class="py-4 px-6">
+                <span
+                  class="text-[10px] font-extrabold bg-slate-200 text-slate-700 px-3 py-1 rounded-full uppercase tracking-wide"
+                  >PADEL</span
+                >
+              </td>
+              <td class="py-4 px-6 text-right">
+                <button
+                  class="text-slate-400 hover:text-slate-700 p-2 rounded-lg hover:bg-slate-50"
+                >
+                  <i class="pi pi-ellipsis-v"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

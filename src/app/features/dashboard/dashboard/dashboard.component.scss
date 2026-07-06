@@ -1,0 +1,58 @@
+aside {
+  background-color: white;
+  min-width: 280px;
+  max-width: 280px;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  .brand {
+    color: var(--default-green-color);
+    font-style: italic;
+    font-size: 32px;
+  }
+
+  nav {
+    padding: 0 5px;
+    gap: 5px;
+
+    button {
+      background-color: black;
+      color: white;
+      gap: 8px;
+      text-transform: capitalize;
+      letter-spacing: 1.1px;
+
+      &:hover {
+        background-color: var(--default-green-color);
+        color: black;
+      }
+
+      &:active {
+        background-color: #68fd5d;
+      }
+    }
+  }
+
+  .space {
+    padding: 0 5px;
+    margin-top: 25px;
+    gap: 15px;
+  }
+}
+
+header {
+    background-color: wheat;
+  position: absolute;
+  width: calc(100% - 300px);
+  top: 0;
+  left: 280px;
+  padding: 10px 10px;
+}
+
+.position-card {
+  width: calc(100% - 300px);
+  position: relative;
+  left: 280px;
+  top: 55px;
+}

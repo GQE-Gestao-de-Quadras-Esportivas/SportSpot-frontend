@@ -5,6 +5,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { ActivatedRoute, Router } from '@angular/router';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-user-login-form',
@@ -16,19 +17,15 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class UserLoginFormComponent implements OnInit {
   private router = inject(Router);
   private route = inject(ActivatedRoute);
-
   private fb = inject(NonNullableFormBuilder);
+  private userService = inject(UserService);
 
   protected loginForm = this.fb.group<UserLoginFormControls>({
     email: this.fb.control('', [Validators.required, Validators.email]),
     password: this.fb.control('', [Validators.required]),
   });
 
-  ngOnInit() {
-    this.loginForm.controls.email.valueChanges.subscribe((value) => {
-      console.log(value.toUpperCase());
-    });
-  }
+  ngOnInit() {}
 
   goToRegister() {
     this.router.navigate(['../register'], {relativeTo: this.route})
@@ -36,12 +33,18 @@ export class UserLoginFormComponent implements OnInit {
 
   onSubmit() {
     if (this.loginForm.invalid) {
-      this.loginForm.markAllAsTouched(); // Ativa visualmente os erros em todos os campos
+      this.loginForm.markAllAsTouched();
       return;
     }
 
-    // .getRawValue() extrai o objeto limpo mesmo se houver campos desabilitados
     const payload = this.loginForm.getRawValue();
-    console.log('Dados prontos para a API:', payload);
+    this.userService.login(payload).subscribe({
+      next: () => {
+        this.router.navigate(['/dashboard'])
+      },
+      error: (err) => {
+        console.error('Erro ao entrar:', err)
+      }
+    })
   }
 }

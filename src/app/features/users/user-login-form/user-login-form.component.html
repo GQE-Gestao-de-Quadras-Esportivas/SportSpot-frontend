@@ -6,11 +6,11 @@
         <form class="flex flex-col text-center" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
           <mat-form-field appearance="outline" class="custom-form-field">
             <mat-label>Email</mat-label>
-            <input matInput placeholder="Digite seu email" />
+            <input matInput placeholder="Digite seu email" [formControl]="loginForm.controls.email" />
           </mat-form-field>
           <mat-form-field appearance="outline" class="custom-form-field">
             <mat-label>Senha</mat-label>
-            <input matInput type="password" placeholder="Digite sua senha" />
+            <input matInput type="password" placeholder="Digite sua senha" [formControl]="loginForm.controls.password" />
           </mat-form-field>
           <button type="submit">Entrar</button>
           <p>

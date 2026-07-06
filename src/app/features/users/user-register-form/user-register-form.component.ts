@@ -32,11 +32,7 @@ export class UserRegisterFormComponent implements OnInit {
     confirm_password: this.fb.control('', [Validators.required, Validators.minLength(8)]),
   });
 
-  ngOnInit() {
-    this.registerForm.controls.email.valueChanges.subscribe((value) => {
-      console.log(value.toUpperCase());
-    });
-  }
+  ngOnInit() {}
 
   goToLogin() {
     this.router.navigate(['../login'], { relativeTo: this.route });

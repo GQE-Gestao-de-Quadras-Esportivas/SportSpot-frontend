@@ -9,23 +9,34 @@
 @tailwind components;
 @tailwind utilities;
 @import "primeicons/primeicons.css";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
   --backgroud-default: #000000;
   --text-color-default: #ffffff;
   --default-green-color: #4DB614;
+  --default-hover-green-color: #2e7508;
+  --default-icons-background-color: #69FD5D;
+  --default-icons-color: #206d1b;
+  --font-family: 'Poppins', sans-serif;
+
+  html, body {
+    font-family: var(--font-family);
+  }
 
   button {
     border: none;
     border-radius: 8px;
     padding: 15px;
-    background-color: #4DB614;
+    background-color: var(--default-green-color);
     color: black;
+    font-family: var(--font-family);
     font-weight: bolder;
     text-transform: uppercase;
+    transition: 0.5s ease-in-out;
     
     &:hover {
-      background-color: #2e7508;
+      background-color: var(--default-hover-green-color);
       cursor: pointer;
     }
   }
@@ -66,13 +77,14 @@
 
 html {
   height: 100%;
+  font-family: var(--font-family);
   @include mat.theme(
     (
       // color: (
       //   primary: mat.$cyan-palette,
       //   tertiary: mat.$orange-palette,
       // ),
-      typography: Roboto,
+      typography: Poppins,
       density: 0,
     )
   );

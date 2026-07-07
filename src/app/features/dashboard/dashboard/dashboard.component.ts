@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, OnInit, signal } from '@angular/core';
+import { CommonModule, DatePipe } from '@angular/common';
 import {MatCardModule} from '@angular/material/card';
+import { MatIcon } from "@angular/material/icon";
 
 interface Agendamento {
   cliente: string;
@@ -14,11 +15,13 @@ interface Agendamento {
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule, MatCardModule],
+  imports: [CommonModule, MatCardModule, MatIcon, DatePipe],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
 })
 export class DashboardComponent {
+  today = signal<Date>(new Date());
+
   
   // Massa de dados correspondente à tabela da imagem
   agendamentos: Agendamento[] = [

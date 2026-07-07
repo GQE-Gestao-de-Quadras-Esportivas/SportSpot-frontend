@@ -1,58 +1,80 @@
-aside {
-  background-color: white;
-  min-width: 280px;
-  max-width: 280px;
-  position: absolute;
-  top: 0;
-  left: 0;
+mat-card.position-card {
+  margin-left: 50px;
+}
 
-  .brand {
-    color: var(--default-green-color);
-    font-style: italic;
-    font-size: 32px;
+mat-card.date-card {
+  background-color: black;
+  font-weight: 100;
+
+  mat-card-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    mat-icon {
+      font-size: 22px;
+    }
   }
+}
 
-  nav {
-    padding: 0 5px;
-    gap: 5px;
+mat-card.dashboard-card {
+  max-width: 380px;
+  min-height: 200px;
+  background-color: rgb(202, 255, 181);
+  color: black;
 
-    button {
-      background-color: black;
-      color: white;
-      gap: 8px;
-      text-transform: capitalize;
-      letter-spacing: 1.1px;
+  mat-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
 
-      &:hover {
-        background-color: var(--default-green-color);
-        color: black;
-      }
+    .card-icon {
+      border-radius: 5px;
+      padding: 0 3px;
+      padding-top: 3px;
+      background-color: var(--default-icons-background-color);
+      color: var(--default-icons-color);
+    }
 
-      &:active {
-        background-color: #68fd5d;
+    .card-values {
+      margin-top: auto;
+
+      .card-value {
+        font-size: 48px;
+        font-weight: bold;
+
+        span {
+          font-size: 28px;
+          font-weight: 500;
+        }
       }
     }
   }
+}
 
-  .space {
-    padding: 0 5px;
-    margin-top: 25px;
-    gap: 15px;
+mat-card.dashboard-card.black-card {
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+
+  mat-card-content {
+    small {
+      color: #4e922e;
+    }
   }
 }
 
-header {
-    background-color: wheat;
-  position: absolute;
-  width: calc(100% - 300px);
-  top: 0;
-  left: 280px;
-  padding: 10px 10px;
+.gap {
+  gap: 8px !important;
 }
 
-.position-card {
-  width: calc(100% - 300px);
-  position: relative;
-  left: 280px;
-  top: 55px;
+.gap-2 {
+  gap: 16px !important;
+}
+
+.gap-3 {
+  gap: 24px !important;
+}
+
+.capitalize {
+  text-transform: capitalize !important;
 }

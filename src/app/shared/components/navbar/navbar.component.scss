@@ -12,9 +12,9 @@ header {
 
   .brand {
     color: var(--default-green-color, #15803d);
-    font-style: italic;
+    font-style: oblique;
     font-size: 32px;
-
+    font-family: 'Roboto', sans-serif;
     white-space: nowrap;
   }
 }

@@ -9,7 +9,6 @@
 @tailwind components;
 @tailwind utilities;
 @import "primeicons/primeicons.css";
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
   --backgroud-default: #000000;
@@ -18,7 +17,7 @@
   --default-hover-green-color: #2e7508;
   --default-icons-background-color: #69FD5D;
   --default-icons-color: #206d1b;
-  --font-family: 'Poppins', sans-serif;
+  --font-family: 'Montserrat';
 
   html, body {
     font-family: var(--font-family);
@@ -53,11 +52,13 @@
   .mdc-notched-outline__notch,
   .mdc-notched-outline__trailing {
     border-color: #4DB614 !important;
+    font-family: var(--font-family);
   }
 
   /* 2. Cor da label normal (em repouso) */
   .mat-mdc-form-field-label {
     color: #4DB614 !important;
+    font-family: var(--font-family);
   }
 
   /* 3. Cor da borda QUANDO FOCADO */
@@ -66,11 +67,13 @@
     .mdc-notched-outline__notch,
     .mdc-notched-outline__trailing {
       border-color: #00ff0d !important; /* Sua cor aqui */
+      font-family: var(--font-family);
     }
 
     /* 4. Cor da label QUANDO FOCADO */
     .mat-mdc-form-field-label {
       color: #3cff00 !important;
+      font-family: var(--font-family);
     }
   }
 }
@@ -84,7 +87,7 @@ html {
       //   primary: mat.$cyan-palette,
       //   tertiary: mat.$orange-palette,
       // ),
-      typography: Poppins,
+      typography: Montserrat,
       density: 0,
     )
   );

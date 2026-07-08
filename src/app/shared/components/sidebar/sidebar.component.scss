@@ -15,16 +15,25 @@ aside {
   nav {
     display: flex;
     flex-direction: column;
-    gap: 8px;
 
     button {
-      color: #000000;
+      background-color: transparent;
+      color: #ffffff;
+      font-weight: 300;
       transition: all 0.2s ease;
       font-size: 16px;
       letter-spacing: 0.5px;
+      text-transform: capitalize;
+      border-bottom: 1px solid var(--default-icons-background-color);
+      border-radius: 0;
 
       &:active {
         transform: scale(0.98);
+      }
+
+      &:hover {
+        background-color: var(--default-icons-background-color);
+        color: black;
       }
     }
   }
@@ -32,8 +41,28 @@ aside {
   .space {
     display: flex;
     flex-direction: column;
-    gap: 12px;
     margin-bottom: 25px;
+
+    button {
+      background-color: transparent;
+      color: #ffffff;
+      font-weight: 300;
+      transition: all 0.2s ease;
+      font-size: 16px;
+      letter-spacing: 0.5px;
+      text-transform: capitalize;
+      border-bottom: 1px solid var(--default-icons-background-color);
+      border-radius: 0;
+
+      &:active {
+        transform: scale(0.98);
+      }
+
+      &:hover {
+        background-color: var(--default-icons-background-color);
+        color: black;
+      }
+    }
   }
 }
 

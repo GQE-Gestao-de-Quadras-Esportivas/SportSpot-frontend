@@ -5,7 +5,7 @@
         <div>
           <h1 class="text-3xl font-bold text-slate-900 tracking-tight">Dashboard do Gestor</h1>
           <p class="text-sm text-slate-500 mt-1">
-            Bem-vindo de volta, aqui está o resumo do Elite Sports Complex hoje.
+            Bem-vindo de volta, {{ userService.currentUser()?.name }}. Aqui está o resumo de hoje.
           </p>
         </div>
         <mat-card class="date-card">
@@ -20,14 +20,14 @@
         </mat-card>
       </div>
 
-      <div class="grid grid-cols-3 gap-3">
-        <mat-card class="dashboard-card">
+      <div class="grid grid-cols-3 gap-3" style="margin-bottom: 15px">
+        <mat-card class="dashboard-card card-shadow">
           <mat-card-content>
             <div class="flex justify-between">
               <div class="card-icon">
                 <mat-icon>bar_chart</mat-icon>
               </div>
-              <span class="card-icon" style="padding: 5px; font-weight: lighter">+12%</span>
+              <span class="card-icon" style="padding: 5px; color: black;">+12%</span>
             </div>
             <div class="card-values flex flex-col gap-2">
               <div class="flex flex-col gap-2">
@@ -47,7 +47,7 @@
           </mat-card-content>
         </mat-card>
 
-        <mat-card class="dashboard-card black-card">
+        <mat-card class="dashboard-card black-card card-shadow">
           <mat-card-content>
             <div class="flex justify-between items-start">
               <div class="card-icon">
@@ -65,7 +65,7 @@
           </mat-card-content>
         </mat-card>
 
-        <mat-card class="dashboard-card">
+        <mat-card class="dashboard-card card-shadow">
           <mat-card-content>
             <div class="flex justify-between">
               <div class="card-icon">
@@ -92,7 +92,10 @@
                 src="https://avatar.iran.liara.run/public/3"
                 alt="User"
               />
-              <div class="card-icon" style="border-radius: 100%; padding: 5px; border: 3px solid #206d1b;">
+              <div
+                class="card-icon"
+                style="border-radius: 100%; padding: 5px; border: 3px solid #206d1b"
+              >
                 +25
               </div>
             </div>
@@ -100,107 +103,84 @@
         </mat-card>
       </div>
 
-      <div class="grid grid-cols-3 gap-6">
-        <div
-          class="col-span-2 bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between h-96"
-        >
-          <div class="flex justify-between items-center">
-            <h3 class="text-lg font-bold text-slate-900">Ocupação Semanal</h3>
-            <div class="relative">
-              <select
-                class="text-xs font-bold text-slate-600 bg-slate-50 border border-slate-200 rounded-xl px-4 py-2 pr-8 appearance-none focus:outline-none cursor-pointer"
-              >
-                <option>Últimos 7 dias</option>
-              </select>
-              <i
-                class="pi pi-chevron-down absolute right-3 top-1/2 -translate-y-1/2 text-[10px] text-slate-500 pointer-events-none"
-              ></i>
-            </div>
-          </div>
-
-          <div
-            class="flex-1 flex items-center justify-center text-slate-300 border border-dashed border-slate-100 my-4 rounded-xl"
-          ></div>
-
-          <div class="flex justify-between items-end px-4 text-xs font-bold text-slate-400">
-            <span>SEG</span><span>TER</span><span>QUA</span><span>QUI</span><span>SEX</span
-            ><span class="text-slate-900 font-extrabold bg-slate-100 px-2 py-0.5 rounded-md"
-              >SAB</span
-            ><span>DOM</span>
-          </div>
-        </div>
-
-        <div
-          class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between h-96"
-        >
-          <h3 class="text-lg font-bold text-slate-900 mb-2">Status das Quadras</h3>
-
-          <div class="space-y-3 flex-1 overflow-y-auto pr-1">
-            <div
-              class="flex items-center justify-between p-3 border border-slate-100 bg-slate-50/50 rounded-xl"
-            >
-              <div class="flex items-center gap-3">
-                <div
-                  class="w-10 h-10 bg-[#4ADE80] rounded-xl text-emerald-950 font-bold text-sm flex items-center justify-center"
+      <div class="grid grid-cols-3 gap-3" style="margin-bottom: 15px;">
+        <mat-card class="col-span-2 flex flex-col justify-between weekly-occupancy card-shadow">
+          <mat-card-content>
+            <div class="flex justify-between items-center">
+              <h3>Ocupação Semanal</h3>
+              <div class="relative">
+                <select
+                  class="text-xs font-bold text-slate-600 bg-slate-50 border border-slate-200 rounded-xl px-4 py-2 pr-8 appearance-none focus:outline-none cursor-pointer"
                 >
-                  Q1
-                </div>
-                <div>
-                  <h4 class="text-xs font-bold text-slate-800">Quadra Central</h4>
-                  <p class="text-[9px] text-slate-400 font-bold uppercase tracking-wider">
-                    Tennis Pro
-                  </p>
-                </div>
+                  <option>Últimos 7 dias</option>
+                </select>
+                <i
+                  class="pi pi-chevron-down absolute right-3 top-1/2 -translate-y-1/2 text-[10px] text-slate-500 pointer-events-none"
+                ></i>
               </div>
-              <span
-                class="text-[10px] font-bold bg-[#4ADE80]/80 text-emerald-950 px-2.5 py-1.5 rounded-full uppercase tracking-wider text-center min-w-[70px]"
-                >Em Uso</span
-              >
             </div>
 
             <div
-              class="flex items-center justify-between p-3 border border-slate-100 bg-slate-50/50 rounded-xl"
-            >
-              <div class="flex items-center gap-3">
-                <div
-                  class="w-10 h-10 bg-slate-100 border border-slate-200 rounded-xl text-slate-700 font-bold text-sm flex items-center justify-center"
-                >
-                  Q2
-                </div>
-                <div>
-                  <h4 class="text-xs font-bold text-slate-800">Quadra Norte</h4>
-                  <p class="text-[9px] text-slate-400 font-bold uppercase tracking-wider">Padel</p>
-                </div>
-              </div>
-              <span
-                class="text-[10px] font-bold bg-slate-200/70 text-slate-600 px-2.5 py-1.5 rounded-full uppercase tracking-wider text-center min-w-[70px]"
-                >Disponível</span
-              >
-            </div>
+              class="flex-1 flex items-center justify-center text-slate-300 border border-dashed border-slate-100 my-4 rounded-xl"
+            ></div>
 
-            <div
-              class="flex items-center justify-between p-3 border border-slate-100 bg-slate-50/50 rounded-xl"
-            >
-              <div class="flex items-center gap-3">
-                <div
-                  class="w-10 h-10 bg-red-50 border border-red-100 rounded-xl text-red-600 font-bold text-sm flex items-center justify-center"
-                >
-                  Q3
-                </div>
-                <div>
-                  <h4 class="text-xs font-bold text-slate-800">Quadra Coberta</h4>
-                  <p class="text-[9px] text-slate-400 font-bold uppercase tracking-wider">
-                    Multisports
-                  </p>
-                </div>
-              </div>
-              <span
-                class="text-[10px] font-bold bg-red-50 text-red-600 border border-red-100 px-2.5 py-1.5 rounded-full uppercase tracking-wider text-center min-w-[70px]"
-                >Manutenção</span
-              >
+            <div class="flex justify-between items-end px-4 text-xs font-bold text-slate-400">
+              <span>SEG</span><span>TER</span><span>QUA</span><span>QUI</span><span>SEX</span
+              ><span class="text-slate-900 font-extrabold bg-slate-100 px-2 py-0.5 rounded-md"
+                >SAB</span
+              ><span>DOM</span>
             </div>
-          </div>
-        </div>
+          </mat-card-content>
+        </mat-card>
+
+        <mat-card class="flex flex-col justify-between court-status card-shadow">
+          <mat-card-content>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">Status das Quadras</h3>
+
+            <div class="flex flex-col gap-2">
+              @for (court of courts; track court.id) {
+                <div
+                  class="flex items-center justify-between court-card"
+                >
+                  <div class="flex items-center gap-3">
+                    <div
+                      class="bg-[#4ADE80] flex items-center justify-center court-id"
+                    >
+                      Q{{ court.id }}
+                    </div>
+                    <div>
+                      <h4 class="text-xs font-bold text-slate-800">{{ court.name }}</h4>
+                      <p class="text-[10px]">
+                        {{ court.sport }}
+                      </p>
+                    </div>
+                  </div>
+                  @if (court.status === 'DISPONÍVEL') {
+                    <span
+                      class="text-[10px] bg-[#4ADE80]/80 rounded-full uppercase text-center min-w-[70px] court-status"
+                    >
+                      {{ court.status }}
+                    </span>
+                  } @else if (court.status === 'EM USO') {
+                    <span
+                      class="text-[10px] bg-[#D62B2B]/80 rounded-full uppercase text-center min-w-[70px] court-status"
+                    >
+                      {{ court.status }}
+                    </span>
+                  } @else {
+                    <span
+                      class="text-[10px] bg-[#CECECE]/80 rounded-full uppercase text-center min-w-[70px] court-status"
+                    >
+                      {{ court.status }}
+                    </span>
+                  }
+                </div>
+              } @empty {
+                <p>Sem quadras disponíveis</p>
+              }
+            </div>
+          </mat-card-content>
+        </mat-card>
       </div>
 
       <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">

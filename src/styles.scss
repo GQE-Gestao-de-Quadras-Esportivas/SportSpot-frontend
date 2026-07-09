@@ -4,18 +4,19 @@
 // Learn more about theming and how to use it for your application's
 // custom components at https://material.angular.dev/guide/theming
 @use '@angular/material' as mat;
-@import "primeicons/primeicons.css";
+@import 'primeicons/primeicons.css';
 
 :root {
   --backgroud-default: #000000;
   --text-color-default: #ffffff;
-  --default-green-color: #4DB614;
+  --default-green-color: #4db614;
   --default-hover-green-color: #2e7508;
-  --default-icons-background-color: #69FD5D;
+  --default-icons-background-color: #69fd5d;
   --default-icons-color: #206d1b;
   --font-family: 'Montserrat';
 
-  html, body {
+  html,
+  body {
     font-family: var(--font-family);
   }
 
@@ -29,7 +30,7 @@
     font-weight: bolder;
     text-transform: uppercase;
     transition: 0.5s ease-in-out;
-    
+
     &:hover {
       background-color: var(--default-hover-green-color);
       cursor: pointer;
@@ -39,6 +40,23 @@
   a {
     color: var(--default-green-color);
   }
+
+  .text-default {
+    color: var(--default-green-color);
+  }
+
+  .bg-default {
+    background-color: var(--default-green-color);
+  }
+
+  .border-default {
+    border: 1px solid;
+    border-color: var(--default-green-color);
+
+    &:hover {
+      border-color: #000000;
+    }
+  }
 }
 
 .custom-form-field {
@@ -47,13 +65,13 @@
   .mdc-notched-outline__leading,
   .mdc-notched-outline__notch,
   .mdc-notched-outline__trailing {
-    border-color: #4DB614 !important;
+    border-color: #4db614 !important;
     font-family: var(--font-family);
   }
 
   /* 2. Cor da label normal (em repouso) */
   .mat-mdc-form-field-label {
-    color: #4DB614 !important;
+    color: #4db614 !important;
     font-family: var(--font-family);
   }
 
@@ -84,7 +102,7 @@ html {
       //   tertiary: mat.$orange-palette,
       // ),
       typography: Montserrat,
-      density: 0,
+      density: 0
     )
   );
 }

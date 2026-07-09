@@ -1,25 +1,45 @@
 <aside class="h-100">
   <div>
     <nav>
-      <button class="d-flex align-items-center gap-2"><mat-icon>dashboard</mat-icon> Dashboard</button>
+      <a
+        routerLink="/dashboard"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="d-flex align-items-center gap-2"
+      >
+        <mat-icon>dashboard</mat-icon> Dashboard
+      </a>
 
-      <button class="d-flex align-items-center gap-2"><mat-icon>calendar_month</mat-icon> Agendamentos</button>
+      <a
+        routerLink="agendamentos"
+        routerLinkActive="active"
+        class="d-flex align-items-center gap-2"
+        class="d-flex align-items-center gap-2"
+      >
+        <mat-icon>calendar_month</mat-icon> Agendamentos
+      </a>
 
-      <button class="d-flex align-items-center gap-2"><mat-icon>stadium</mat-icon> Quadras</button>
+      <a routerLink="quadras" routerLinkActive="active" class="d-flex align-items-center gap-2"
+        ><mat-icon>stadium</mat-icon> Quadras</a
+      >
 
-      <button class="d-flex align-items-center gap-2"><mat-icon>bar_chart_4_bars</mat-icon> Análises</button>
+      <a routerLink="analises" routerLinkActive="active" class="d-flex align-items-center gap-2">
+        <mat-icon>bar_chart_4_bars</mat-icon> Análises
+      </a>
 
-      <button class="d-flex align-items-center gap-2"><mat-icon>payments</mat-icon> Pagamentos</button>
+      <a routerLink="pagamentos" routerLinkActive="active" class="d-flex align-items-center gap-2">
+        <mat-icon>payments</mat-icon> Pagamentos
+      </a>
     </nav>
   </div>
 
   <div class="space">
-    <!-- <button class="d-flex align-items-center justify-center gap-2">
+    <!-- <a class="d-flex align-items-center justify-center gap-2">
       <mat-icon>map_search</mat-icon> View Live Map
-    </button> -->
+    </a> -->
 
-    <button class="d-flex align-items-center justify-center gap-2" (click)="logout()">
+    <a class="d-flex align-items-center justify-center gap-2" (click)="logout()">
       <mat-icon>logout</mat-icon> Logout
-    </button>
+    </a>
   </div>
 </aside>

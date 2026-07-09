@@ -1,18 +1,5 @@
-.form-side {
-  grid-column: span 3 / span 3;
-
-  @media (min-width: 1024px) {
-    grid-column: span 1 / span 1;
-  }
-}
-
 .logo-banner {
-  display: none;
-
-  @media (min-width: 1024px) {
-    display: block;
-    grid-column: span 2 / span 2;
-  }
+  height: 100dvh!important;
   background-image: url('/images/background-field.png');
   background-position: center;
   background-size: cover;

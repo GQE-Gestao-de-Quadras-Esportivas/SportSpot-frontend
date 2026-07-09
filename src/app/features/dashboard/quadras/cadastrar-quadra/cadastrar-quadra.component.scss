@@ -1,0 +1,22 @@
+/* Botões baseados no design do SportSpot */
+.btn-salvar {
+  background-color: #55ee3a !important;
+  color: #000000 !important;
+  border-radius: 8px !important;
+  font-weight: 600;
+}
+
+.btn-salvar:disabled {
+  background-color: #26292b !important;
+  color: #666 !important;
+}
+
+.btn-cancelar {
+  background-color: transparent !important;
+  border: 1px solid #26292b !important;
+  border-radius: 8px !important;
+}
+
+.btn-cancelar:hover {
+  background-color: #1a1c1d !important;
+}

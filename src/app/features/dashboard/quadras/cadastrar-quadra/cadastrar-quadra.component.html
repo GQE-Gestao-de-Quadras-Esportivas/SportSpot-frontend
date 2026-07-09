@@ -1,0 +1,132 @@
+<div class="container-fluid p-4 text-white">
+  
+  <div class="row mb-4">
+    <div class="col-12">
+      <h2 class="fw-bold fs-3">Cadastrar Nova Quadra</h2>
+      <p class="text-white small">Insira as informações básicas e configurações da nova praça esportiva.</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <div class="p-4 rounded-3" style="background-color: #0b0c0c; border: 1px solid #1a1c1d;">
+        
+        <form [formGroup]="quadraForm" (ngSubmit)="onSubmit()">
+          
+          <div class="row g-3">
+            
+            <div class="col-12 col-md-8">
+              <mat-form-field appearance="outline" class="w-100 custom-form-field">
+                <mat-label>Nome da Quadra (Ex: Quadra 01 - Society)</mat-label>
+                <input matInput [formControl]="quadraForm.controls.court_name" placeholder="Digite o nome identificador">
+                <mat-icon matSuffix>sports_soccer</mat-icon>
+              </mat-form-field>
+            </div>
+
+            <div class="col-12 col-md-4">
+              <mat-form-field appearance="outline" class="w-100 custom-form-field custom-select">
+                <mat-label>Modalidade</mat-label>
+                <mat-select [formControl]="quadraForm.controls.sport">
+                  <mat-option value="futebol">Futebol</mat-option>
+                  <mat-option value="basquete">Basquete</mat-option>
+                  <mat-option value="volei">Vôlei</mat-option>
+                  <mat-option value="tennis">Tênis / Beach Tennis</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+
+            <div class="col-12 col-md-6">
+              <mat-form-field appearance="outline" class="w-100 custom-form-field">
+                <mat-label>Valor da Hora (R$)</mat-label>
+                <input matInput type="number" [formControl]="quadraForm.controls.price" placeholder="0,00" min="0">
+                <mat-icon matSuffix>payments</mat-icon>
+              </mat-form-field>
+            </div>
+
+            <div class="col-12 col-md-6">
+              <mat-form-field appearance="outline" class="w-100 custom-form-field custom-select">
+                <mat-label>Tipo de Piso</mat-label>
+                <mat-select [formControl]="quadraForm.controls.ground_type">
+                  <mat-option value="grama_natural">Grama Natural</mat-option>
+                  <mat-option value="grama_sintetica">Grama Sintética</mat-option>
+                  <mat-option value="parquet">Madeira / Parquet</mat-option>
+                  <mat-option value="cimento">Cimento Polido</mat-option>
+                  <mat-option value="areia">Areia</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+
+            <div class="col-2">
+              <mat-form-field appearance="outline" class="w-100 custom-form-field">
+                <mat-label>Informe o CEP</mat-label>
+                <input matInput type="text" [formControl]="quadraForm.controls.cep" (blur)="buscarCep()" placeholder="00000-000" maxlength="9"/>
+              </mat-form-field>
+            </div>
+            <div class="col-8">
+              <mat-form-field appearance="outline" class="w-100 custom-form-field">
+                <mat-label>Informe a Rua/Avenida</mat-label>
+                <input matInput type="text" [formControl]="quadraForm.controls.address" placeholder="Rua/Avenida" />
+              </mat-form-field>
+            </div>
+            <div class="col-2">
+              <mat-form-field appearance="outline" class="w-100 custom-form-field">
+                <mat-label>Informe o Número</mat-label>
+                <input matInput type="text" [formControl]="quadraForm.controls.address_number" placeholder="Ex: 325" />
+              </mat-form-field>
+            </div>
+
+            <div class="col-4">
+              <mat-form-field appearance="outline" class="w-100 custom-form-field">
+                <mat-label>Bairro</mat-label>
+                <input matInput type="text" [formControl]="quadraForm.controls.neighborhood" placeholder="Ex: Santa Angelina" />
+              </mat-form-field>
+            </div>
+            <div class="col-4">
+              <mat-form-field appearance="outline" class="w-100 custom-form-field">
+                <mat-label>Cidade</mat-label>
+                <input matInput type="text" [formControl]="quadraForm.controls.city" placeholder="Ex: Araraquara" />
+              </mat-form-field>
+            </div>
+            <div class="col-4">
+              <mat-form-field appearance="outline" class="w-100 custom-form-field">
+                <mat-label>Estado</mat-label>
+                <input matInput type="text" [formControl]="quadraForm.controls.state" placeholder="Ex: SP" />
+              </mat-form-field>
+            </div>
+
+            <div class="col-12">
+              <mat-form-field appearance="outline" class="w-100 custom-form-field">
+                <mat-label>Informações Adicionais / Regras da Quadra</mat-label>
+                <textarea matInput rows="4" [formControl]="quadraForm.controls.descricao" placeholder="Ex: Iluminação inclusa, coletes disponíveis..."></textarea>
+              </mat-form-field>
+            </div>
+
+            <div class="col-12 my-3">
+              <h5 class="text-secondary small mb-3 text-uppercase fw-bold tracking-wide">Recursos Disponíveis</h5>
+              <div class="d-flex flex-wrap gap-4">
+                <mat-checkbox [formControl]="quadraForm.controls.temCobertura" class="custom-checkbox">Possui Cobertura</mat-checkbox>
+                <mat-checkbox [formControl]="quadraForm.controls.temIluminacao" class="custom-checkbox">Iluminação Noturna</mat-checkbox>
+                <mat-checkbox [formControl]="quadraForm.controls.temVestiario" class="custom-checkbox">Vestiários Próximos</mat-checkbox>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <hr class="border-secondary opacity-25 my-3">
+            </div>
+
+            <div class="col-12 d-flex justify-content-end gap-2">
+              <button mat-button type="button" class="btn-cancelar px-4 py-2 text-white">
+                Cancelar
+              </button>
+              <button mat-flat-button type="submit" [disabled]="!quadraForm.valid" class="btn-salvar px-4 py-2fw-bold">
+                <mat-icon class="me-1">save</mat-icon> Salvar Quadra
+              </button>
+            </div>
+
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>

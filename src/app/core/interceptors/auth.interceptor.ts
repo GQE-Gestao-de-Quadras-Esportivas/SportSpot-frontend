@@ -14,6 +14,10 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
     withCredentials: true
   });
 
+  if (req.url.includes('viacep.com.br')) {
+    return next(req);
+  }
+
   return next(authReq).pipe(
     catchError((error: HttpErrorResponse) => {
       if (error.status === 401 && !req.url.includes('auth/login') && !req.url.includes('auth/refresh')) {

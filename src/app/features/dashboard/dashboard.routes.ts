@@ -14,7 +14,7 @@ export const DASHBOARD_ROUTES: Routes = [
   {
     path: 'quadras/cadastrar-quadra',
     loadComponent: () =>
-      import('./quadras/cadrastar-quadra/cadrastar-quadra.component').then(
+      import('./quadras/cadastrar-quadra/cadastrar-quadra.component').then(
         (m) => m.CadastrarQuadraComponent,
       ),
   },

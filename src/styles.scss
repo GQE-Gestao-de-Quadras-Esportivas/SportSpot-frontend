@@ -15,6 +15,23 @@
   --default-icons-color: #206d1b;
   --font-family: 'Montserrat';
 
+  .custom-select {
+    @include mat.select-overrides(
+      (
+        panel-background-color: var(--backgroud-default),
+      )
+    );
+  }
+
+  .custom-checkbox {
+    @include mat.checkbox-overrides(
+      (
+        label-text-color: white,
+        selected-checkmark-color: var(--default-green-color),
+      )
+    );
+  }
+
   html,
   body {
     font-family: var(--font-family);

@@ -1,8 +1,8 @@
-<div class="app-layout">
-      <app-navbar></app-navbar>
-      <app-sidebar></app-sidebar>
-      
-      <main class="main-content">
-        <router-outlet></router-outlet> 
-      </main>
-    </div>
+<div class="app-layout" [class.sidebar-closed]="!isSidebarOpen">
+  <app-navbar (toggleMenu)="toggleSidebar()"></app-navbar>
+  <app-sidebar [class.is-open]="isSidebarOpen"></app-sidebar>
+
+  <main class="main-content">
+    <router-outlet></router-outlet>
+  </main>
+</div>

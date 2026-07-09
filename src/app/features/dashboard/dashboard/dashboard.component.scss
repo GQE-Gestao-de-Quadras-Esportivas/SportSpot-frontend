@@ -18,7 +18,6 @@ mat-card.date-card {
 }
 
 mat-card.dashboard-card {
-  max-width: 100%;
   min-height: 200px;
   background-color: rgb(202, 255, 181);
   color: black;
@@ -56,15 +55,6 @@ mat-card.dashboard-card.black-card {
     small {
       color: #4e922e;
     }
-  }
-}
-
-mat-card.weekly-occupancy {
-  background-color: black;
-  padding: 6px;
-
-  h3 {
-    font-size: 20px;
   }
 }
 

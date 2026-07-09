@@ -1,6 +1,6 @@
 <mat-card class="position-card">
   <mat-card-content>
-    <div class="p-10 space-y-8">
+    <div class="p-10">
       <div class="d-flex justify-content-between align-items-start">
         <div>
           <h1 class="text-3xl text-bold tracking-tight"><strong>Dashboard do Gestor</strong></h1>
@@ -20,221 +20,235 @@
         </mat-card>
       </div>
 
-      <div class="row justify-content-between mb-3">
-        <mat-card class="col-sm-12 col-md-3 dashboard-card card-shadow">
-          <mat-card-content class="container">
-            <div class="d-flex justify-content-between mb-4">
-              <div class="card-icon">
-                <mat-icon>bar_chart</mat-icon>
+      <div class="row gx-3 mb-3">
+         
+        <div class="col-sm-12 col-md-4">
+          <mat-card class="dashboard-card card-shadow">
+            <mat-card-content>
+              <div class="d-flex justify-content-between mb-4">
+                <div class="card-icon">
+                  <mat-icon>bar_chart</mat-icon>
+                </div>
+                <span class="card-icon" style="padding: 5px; color: black">+12%</span>
               </div>
-              <span class="card-icon" style="padding: 5px; color: black">+12%</span>
-            </div>
-            <div class="d-flex flex-column card-values gap-4">
-              <div class="d-flex flex-column gap-4">
-                <small>Ocupação Total</small>
-                <span class="card-value">84<span>%</span></span>
-              </div>
-              <div
-                class="w-100 rounded-pill overflow-hidden"
-                style="height: 8px; background-color: #afafaf"
-              >
+              <div class="d-flex flex-column card-values gap-4">
+                <div class="d-flex flex-column gap-4">
+                  <small>Ocupação Total</small>
+                  <span class="card-value">84<span>%</span></span>
+                </div>
                 <div
-                  class="h-full w-75 rounded-pill"
-                  style="height: 8px; background-color: #368836"
-                ></div>
+                  class="w-100 rounded-pill overflow-hidden"
+                  style="height: 8px; background-color: #afafaf"
+                >
+                  <div
+                    class="h-full w-75 rounded-pill"
+                    style="height: 8px; background-color: #368836"
+                  ></div>
+                </div>
               </div>
-            </div>
-          </mat-card-content>
-        </mat-card>
+            </mat-card-content>
+          </mat-card>
+        </div>
 
-        <mat-card class="col-sm-12 col-md-5 dashboard-card black-card card-shadow">
-          <mat-card-content class="container">
-            <div class="d-flex justify-content-between align-items-start mb-4">
-              <div class="card-icon">
-                <mat-icon>payments</mat-icon>
+        <div class="col-sm-12 col-md-4">
+          <mat-card class="dashboard-card black-card card-shadow">
+            <mat-card-content class="container">
+              <div class="d-flex justify-content-between align-items-start mb-4">
+                <div class="card-icon">
+                  <mat-icon>payments</mat-icon>
+                </div>
+                <span class="card-icon text-black p-1">+8.4%</span>
               </div>
-              <span class="card-icon text-black p-1">+8.4%</span>
-            </div>
-            <div class="d-flex flex-column card-values gap-3">
-              <small
-                >Receita Mensal <span class="capitalize">({{ today() | date: 'MMM' }})</span></small
-              >
-              <span class="card-value">R$ 42.850</span>
-              <small>Meta: R$ 50.000 (85.7%)</small>
-            </div>
-          </mat-card-content>
-        </mat-card>
+              <div class="d-flex flex-column card-values gap-3">
+                <small
+                  >Receita Mensal <span class="capitalize">({{ today() | date: 'MMM' }})</span></small
+                >
+                <span class="card-value">R$ 42.850</span>
+                <small>Meta: R$ 50.000 (85.7%)</small>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </div>
 
-        <mat-card class="col-sm-12 col-md-3 dashboard-card card-shadow">
-          <mat-card-content class="container">
-            <div class="d-flex justify-content-between mb-2">
-              <div class="card-icon">
-                <mat-icon>calendar_month</mat-icon>
+        <div class="col-sm-12 col-md-4">
+          <mat-card class="dashboard-card card-shadow">
+            <mat-card-content class="container">
+              <div class="d-flex justify-content-between mb-2">
+                <div class="card-icon">
+                  <mat-icon>calendar_month</mat-icon>
+                </div>
               </div>
-            </div>
-            <div class="d-flex flex-column card-values gap-4 mb-4">
-              <small class="block">Novas Reservas (24h)</small>
-              <span class="card-value">28</span>
-            </div>
-            <div class="d-flex align-center overflow-hidden">
-              <img
-                class="w-7 h-7 rounded-full border-2 border-white object-cover"
-                src="https://avatar.iran.liara.run/public/1"
-                alt="User"
-              />
-              <img
-                class="w-7 h-7 rounded-full border-2 border-white object-cover"
-                src="https://avatar.iran.liara.run/public/2"
-                alt="User"
-              />
-              <img
-                class="w-7 h-7 rounded-full border-2 border-white object-cover"
-                src="https://avatar.iran.liara.run/public/3"
-                alt="User"
-              />
-              <div class="card-icon p-1 rounded-circle" style="border: 3px solid #206d1b">+25</div>
-            </div>
-          </mat-card-content>
-        </mat-card>
+              <div class="d-flex flex-column card-values gap-4 mb-4">
+                <small class="block">Novas Reservas (24h)</small>
+                <span class="card-value">28</span>
+              </div>
+              <div class="d-flex align-center overflow-hidden">
+                <img
+                  class="w-7 h-7 rounded-full border-2 border-white object-cover"
+                  src="https://avatar.iran.liara.run/public/1"
+                  alt="User"
+                />
+                <img
+                  class="w-7 h-7 rounded-full border-2 border-white object-cover"
+                  src="https://avatar.iran.liara.run/public/2"
+                  alt="User"
+                />
+                <img
+                  class="w-7 h-7 rounded-full border-2 border-white object-cover"
+                  src="https://avatar.iran.liara.run/public/3"
+                  alt="User"
+                />
+                <div class="card-icon p-1 rounded-circle" style="border: 3px solid #206d1b">+25</div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+
       </div>
 
-      <div class="row justify-content-between" style="margin-bottom: 15px">
-        <mat-card
-          class="col-sm-12 col-md-8 d-flex flex-column justify-content-between weekly-occupancy card-shadow"
-        >
-          <mat-card-content>
-            <div class="d-flex justify-content-between align-items-center">
-              <h3>Ocupação Semanal</h3>
-              <div class="relative">
-                <select
-                  class="text-xs font-bold text-slate-600 bg-slate-50 border border-slate-200 rounded-xl px-4 py-2 pr-8 appearance-none focus:outline-none cursor-pointer"
-                >
-                  <option>Últimos 7 dias</option>
-                </select>
-              </div>
-            </div>
-
-            <div
-              class="d-flex align-items-center justify-content-center text-slate-300 border border-dashed border-slate-100 my-4 rounded-xl"
-            ></div>
-
-            <div class="d-flex justify-content-between align-items-end px-4">
-              <span>SEG</span><span>TER</span><span>QUA</span><span>QUI</span><span>SEX</span
-              ><span class="px-2">SAB</span><span>DOM</span>
-            </div>
-          </mat-card-content>
-        </mat-card>
-
-        <mat-card
-          class="col-sm-12 col-md-4 py-3 d-flex flex-column justify-content-between court-status card-shadow"
-        >
-          <mat-card-content>
-            <h3 class="text-lg font-bold text-slate-900 mb-2">Status das Quadras</h3>
-
-            <div class="d-flex flex-column gap-2">
-              @for (court of courts; track court.id) {
-                <div class="d-flex align-items-center justify-content-between p-2 court-card">
-                  <div class="d-flex align-items-center gap-2">
-                    <div
-                      class="bg-secondary d-flex align-items-center justify-content-center court-id"
-                    >
-                      Q{{ court.id }}
-                    </div>
-                    <div>
-                      <h4 class="text-xs font-bold">{{ court.name }}</h4>
-                      <p class="text-[10px]">
-                        {{ court.sport }}
-                      </p>
-                    </div>
-                  </div>
-                  @if (court.status === 'DISPONÍVEL') {
-                    <small
-                      class="text-[10px] bg-success rounded-pill uppercase text-center min-w-[70px] court-status"
-                    >
-                      {{ court.status }}
-                    </small>
-                  } @else if (court.status === 'EM USO') {
-                    <span
-                      class="text-[10px] bg-danger rounded-pill uppercase text-center min-w-[70px] court-status"
-                    >
-                      {{ court.status }}
-                    </span>
-                  } @else {
-                    <span
-                      class="text-[10px] bg-light rounded-pill uppercase text-center min-w-[70px] court-status"
-                    >
-                      {{ court.status }}
-                    </span>
-                  }
+      <div class="row gx-3 mb-3">
+        <div class="col-sm-12 col-md-9">
+          <mat-card
+            class="d-flex flex-column justify-content-between bg-black dashboard-card black-card card-shadow h-100"
+          >
+            <mat-card-content>
+              <div class="d-flex justify-content-between align-items-center">
+                <h3>Ocupação Semanal</h3>
+                <div class="relative">
+                  <select
+                    class="text-xs font-bold text-slate-600 bg-slate-50 border border-slate-200 rounded-xl px-4 py-2 pr-8 appearance-none focus:outline-none cursor-pointer"
+                  >
+                    <option>Últimos 7 dias</option>
+                  </select>
                 </div>
-              } @empty {
-                <p>Sem quadras disponíveis</p>
-              }
-            </div>
-          </mat-card-content>
-        </mat-card>
+              </div>
+  
+              <div
+                class="d-flex align-items-center justify-content-center text-slate-300 border border-dashed border-slate-100 my-4 rounded-xl"
+              ></div>
+  
+              <div class="d-flex justify-content-between align-items-end px-4">
+                <span>SEG</span><span>TER</span><span>QUA</span><span>QUI</span><span>SEX</span
+                ><span class="px-2">SAB</span><span>DOM</span>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+
+        <div class="col-sm-12 col-md-3">
+          <mat-card
+            class="py-3 d-flex flex-column justify-content-between court-status card-shadow"
+          >
+            <mat-card-content>
+              <h3 class="text-lg font-bold text-slate-900 mb-2">Status das Quadras</h3>
+  
+              <div class="d-flex flex-column gap-2">
+                @for (court of courts; track court.id) {
+                  <div class="d-flex align-items-center justify-content-between p-2 court-card">
+                    <div class="d-flex align-items-center gap-2">
+                      <div
+                        class="bg-secondary d-flex align-items-center justify-content-center court-id"
+                      >
+                        Q{{ court.id }}
+                      </div>
+                      <div>
+                        <h4 class="text-xs font-bold">{{ court.name }}</h4>
+                        <p class="text-[10px]">
+                          {{ court.sport }}
+                        </p>
+                      </div>
+                    </div>
+                    @if (court.status === 'DISPONÍVEL') {
+                      <small
+                        class="text-[10px] bg-success rounded-pill uppercase text-center min-w-[70px] court-status"
+                      >
+                        {{ court.status }}
+                      </small>
+                    } @else if (court.status === 'EM USO') {
+                      <span
+                        class="text-[10px] bg-danger rounded-pill uppercase text-center min-w-[70px] court-status"
+                      >
+                        {{ court.status }}
+                      </span>
+                    } @else {
+                      <span
+                        class="text-[10px] bg-light rounded-pill uppercase text-center min-w-[70px] court-status"
+                      >
+                        {{ court.status }}
+                      </span>
+                    }
+                  </div>
+                } @empty {
+                  <p>Sem quadras disponíveis</p>
+                }
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </div>
       </div>
 
       <div class="row">
-        <mat-card class="dashboard-card black-card col-12 card-shadow">
-          <mat-card-content>
-            <div class="p-6 d-flex justify-content-between align-items-center">
-              <h3 class="text-xl font-bold text-slate-900">Próximos Agendamentos</h3>
-              <a
-                href="#"
-                class="text-sm font-bold text-emerald-600 hover:text-emerald-700 transition-colors"
-                >Ver Agenda Completa</a
-              >
-            </div>
-
-            <table class="w-100 text-left border-collapse">
-              <thead>
-                <tr
-                  class="border-bottom"
+        <div class="col-12">
+          <mat-card class="dashboard-card black-card card-shadow">
+            <mat-card-content>
+              <div class="p-6 d-flex justify-content-between align-items-center">
+                <h3 class="text-xl font-bold text-slate-900">Próximos Agendamentos</h3>
+                <a
+                  href="#"
+                  class="text-sm font-bold text-emerald-600 hover:text-emerald-700 transition-colors"
+                  >Ver Agenda Completa</a
                 >
-                  <th class="p-3 border">Cliente</th>
-                  <th class="p-3 border">Horário</th>
-                  <th class="p-3 border">Quadra</th>
-                  <th class="p-3 border">Modalidade</th>
-                  <th class="p-3 text-right border">Ações</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="table-row border">
-                  <td class="px-3 py-2 d-flex align-items-center gap-3 border">
-                    <div
-                      class="rounded-circle p-1 bg-secondary text-black fw-bold d-flex align-items-center justify-content-center uppercase"
-                    >
-                      RM
-                    </div>
-                    <div>
-                      <h4 class="fw-bold">Ricardo Mendonça</h4>
-                      <p class="small">ID: #8294</p>
-                    </div>
-                  </td>
-                  <td class="p-3 fs-6 border">
-                    <div class="d-flex align-items-center gap-2">
-                      <mat-icon>alarm</mat-icon>
-                      <span>14:00 - 15:30</span>
-                    </div>
-                  </td>
-                  <td class="p-3 fs-5 border">Quadra Central (Q1)</td>
-                  <td class="p-3 text-center border">
-                    <span
-                      class="fs-7 fw-bold text-black bg-primary p-2 rounded-pill uppercase tracking-wide"
-                      >TENNIS</span
-                    >
-                  </td>
-                  <td class="p-3 text-center">
-                    <mat-icon style="cursor: pointer;">
-                      more_vert
-                    </mat-icon>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </mat-card-content>
-        </mat-card>
+              </div>
+  
+              <table class="w-100 text-left border-collapse">
+                <thead>
+                  <tr
+                    class="border-bottom"
+                  >
+                    <th class="p-3 border">Cliente</th>
+                    <th class="p-3 border">Horário</th>
+                    <th class="p-3 border">Quadra</th>
+                    <th class="p-3 border">Modalidade</th>
+                    <th class="p-3 text-right border">Ações</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="table-row border">
+                    <td class="px-3 py-2 d-flex align-items-center gap-3 border">
+                      <div
+                        class="rounded-circle p-1 bg-secondary text-black fw-bold d-flex align-items-center justify-content-center uppercase"
+                      >
+                        RM
+                      </div>
+                      <div>
+                        <h4 class="fw-bold">Ricardo Mendonça</h4>
+                        <p class="small">ID: #8294</p>
+                      </div>
+                    </td>
+                    <td class="p-3 fs-6 border">
+                      <div class="d-flex align-items-center gap-2">
+                        <mat-icon>alarm</mat-icon>
+                        <span>14:00 - 15:30</span>
+                      </div>
+                    </td>
+                    <td class="p-3 fs-5 border">Quadra Central (Q1)</td>
+                    <td class="p-3 text-center border">
+                      <span
+                        class="fs-7 fw-bold text-black bg-primary p-2 rounded-pill uppercase tracking-wide"
+                        >TENNIS</span
+                      >
+                    </td>
+                    <td class="p-3 text-center">
+                      <mat-icon style="cursor: pointer;">
+                        more_vert
+                      </mat-icon>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </mat-card-content>
+          </mat-card>
+        </div>
       </div>
     </div>
   </mat-card-content>

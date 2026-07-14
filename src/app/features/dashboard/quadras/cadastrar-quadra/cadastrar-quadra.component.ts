@@ -15,6 +15,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatButtonModule } from '@angular/material/button';
 import { Address, GeoService } from '../../../../shared/services/geo.service';
 import { CourtRegisterFormControls } from '../../../../shared/interfaces/Court';
+import { CourtService } from '../services/court.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-cadastrar-quadra',
@@ -34,7 +36,10 @@ import { CourtRegisterFormControls } from '../../../../shared/interfaces/Court';
 })
 export class CadastrarQuadraComponent implements OnInit {
   private geoService = inject(GeoService);
+  private router = inject(Router);
+  private route = inject(ActivatedRoute);
   private fb = inject(NonNullableFormBuilder);
+  private courtService = inject(CourtService);
 
   protected quadraForm = this.fb.group<CourtRegisterFormControls>({
     court_name: this.fb.control('', [Validators.required, Validators.minLength(3)]),
@@ -94,10 +99,19 @@ export class CadastrarQuadraComponent implements OnInit {
   }
 
   onSubmit(): void {
-    if (this.quadraForm.valid) {
-      const payload = this.quadraForm.getRawValue();
-      console.log('Dados da Nova Quadra:', payload);
-      // Aqui entraria a chamada de serviço para salvar no banco
+    if (this.quadraForm.invalid) {
+      this.quadraForm.markAllAsTouched();
+      return;
     }
+
+    const payload = this.quadraForm.getRawValue();
+    this.courtService.registerCourt(payload).subscribe({
+      next: () => {
+        this.router.navigate(['/'], { relativeTo: this.route });
+      },
+      error: (err) => {
+        console.error('Erro ao cadastrar quadra:', err)
+      }
+    })
   }
 }

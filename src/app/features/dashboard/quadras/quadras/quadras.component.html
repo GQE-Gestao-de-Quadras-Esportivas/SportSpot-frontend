@@ -8,9 +8,12 @@
     <p class="text-white mb-0">Todas as suas quadras estão listadas aqui.</p>
   </div>
   <div class="d-flex gap-2">
-    <button class="d-flex align-items-center p-2 border rounded-3 small h-50" (click)="changeRoute('cadastrar-quadra')">
-        <mat-icon class="material-symbols-outlined">add</mat-icon>
-        Adicionar quadra
+    <button
+      class="d-flex align-items-center p-2 border rounded-3 small h-50"
+      (click)="changeRoute('cadastrar-quadra')"
+    >
+      <mat-icon class="material-symbols-outlined">add</mat-icon>
+      Adicionar quadra
     </button>
     <button class="d-flex align-items-center gap-2 p-2 border rounded-3 small h-50">
       <mat-icon class="material-symbols-outlined">filter_list</mat-icon>
@@ -24,81 +27,104 @@
 </div>
 
 <div class="row gx-4 gy-4">
-  <div class="col-sm-12 col-md-6 col-xl-4">
-    <article
-      class="court-card-hover bg-black rounded-3 overflow-hidden shadow-sm d-flex flex-column border h-100"
-      style="border-color: #2d2d2d !important"
-    >
-      <div class="position-relative h-64 overflow-hidden" style="height: 256px">
-        <div class="position-absolute top-0 start-0 m-3 z-3">
-          <span class="bg-default text-black px-3 py-1 rounded-pill small fw-bold">Disponível</span>
-        </div>
-        <img
-          class="w-full h-full w-100 h-100 object-cover"
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuBv1ph8nkPiABKYT_A8mWfVemHrifvsgGDE21E9Qh_21tKfXZZk7mXhni3um8_FkVjQBjnbCj07MPX9P3MiVVaKWacyHmV4HUNFNoeXMO9bxG7AonGhlsR28bsT-th7W3o7N_rVYXIX8wqfn4jOfI4qIasDo0bhRqltKW18KWx_jXlX7Rvl7DFtQ2AVYgpz7Qy6CGjvVVXGLq0-w9loFnjsUzmejCpO4HngjC2SpHj6LRyRV3sjAhHB5njAWFwuM8qRToiSHuXC0Uc"
-          alt="Quadra Central de Tênis"
-        />
-        <div
-          class="position-absolute bottom-0 start-0 w-100 p-3 bg-gradient-to-t"
-          style="background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent)"
+  @if (loading()) {
+    <p>Carregando quadras...</p>
+  } @else {
+    @for (court of courts; track court.id) {
+      <div class="col-sm-12 col-md-6 col-xl-4">
+        <article
+          class="court-card-hover bg-black rounded-3 overflow-hidden shadow-sm d-flex flex-column border h-100"
+          style="border-color: #2d2d2d !important"
         >
-          <p class="text-white mb-0 small opacity-75">Elite Sports Center • Bloco A</p>
-        </div>
-      </div>
-
-      <div class="p-3 flex-grow-1 d-flex flex-column">
-        <div class="d-flex justify-content-between align-items-start mb-2">
-          <h3 class="h5 text-default mb-0"><strong>Quadra Central de Tênis</strong></h3>
-          <!-- <div class="d-flex align-items-center gap-1 text-warning">
-            <mat-icon style="font-variation-settings: 'FILL' 1;">star</mat-icon>
-            <span class="fw-bold text-white small">4.9</span>
-          </div> -->
-        </div>
-
-        <div class="d-flex flex-wrap gap-2 mb-4">
-          <span
-            class="d-flex align-items-center gap-1 bg-default text-black px-2 py-1 rounded small"
-          >
-            <mat-icon class="material-symbols-outlined">lightbulb</mat-icon> Iluminação LED
-          </span>
-          <span
-            class="d-flex align-items-center gap-1 bg-default text-black px-2 py-1 rounded small"
-          >
-            <mat-icon class="material-symbols-outlined">layers</mat-icon> Piso Rápido
-          </span>
-          <span
-            class="d-flex align-items-center gap-1 bg-default text-black px-2 py-1 rounded small"
-          >
-            <mat-icon class="material-symbols-outlined">roofing</mat-icon> Coberta
-          </span>
-        </div>
-
-        <div
-          class="mt-auto pt-3 border-t d-flex align-items-center justify-content-between"
-          style="border-top: 1px solid #2d2d2d"
-        >
-          <div>
-            <span
-              class="d-block text-white text-uppercase tracking-wider small"
-              style="font-size: 11px"
-              >Preço por hora</span
+          <div class="position-relative h-64 overflow-hidden" style="height: 256px">
+            <div class="position-absolute top-0 start-0 m-3 z-3">
+              <span class="bg-default text-black px-3 py-1 rounded-pill small fw-bold"
+                >Disponível</span
+              >
+            </div>
+            <img
+              class="w-full h-full w-100 h-100 object-cover"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBv1ph8nkPiABKYT_A8mWfVemHrifvsgGDE21E9Qh_21tKfXZZk7mXhni3um8_FkVjQBjnbCj07MPX9P3MiVVaKWacyHmV4HUNFNoeXMO9bxG7AonGhlsR28bsT-th7W3o7N_rVYXIX8wqfn4jOfI4qIasDo0bhRqltKW18KWx_jXlX7Rvl7DFtQ2AVYgpz7Qy6CGjvVVXGLq0-w9loFnjsUzmejCpO4HngjC2SpHj6LRyRV3sjAhHB5njAWFwuM8qRToiSHuXC0Uc"
+              alt="Quadra Central de Tênis"
+            />
+            <div
+              class="position-absolute bottom-0 start-0 w-100 p-3 bg-gradient-to-t"
+              style="background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent)"
             >
-            <span class="h5 text-default fw-bold mb-0">R$ 120,00</span>
+              <p class="text-white mb-0 small opacity-75">
+                {{ court.address }}, {{ court.address_number }} - {{ court.neighborhood }},
+                {{ court.city }}/{{ court.state }}
+              </p>
+            </div>
           </div>
-          <div class="d-flex gap-2">
-            <button
-              class="p-2 border-default rounded-3 text-default transition-all d-flex align-items-center"
+
+          <div class="p-3 flex-grow-1 d-flex flex-column">
+            <div class="d-flex justify-content-between align-items-start mb-2">
+              <h3 class="h5 text-default mb-0">
+                <strong>{{ court.court_name }}</strong>
+              </h3>
+              <div class="d-flex align-items-center gap-1">
+                <mat-icon>landscape</mat-icon>
+                <span class="fw-bold text-white small text-capitalize">{{
+                  court.ground_type
+                }}</span>
+
+                <mat-icon>sports_soccer</mat-icon>
+                <span class="fw-bold text-white small text-capitalize">{{ court.sport }}</span>
+              </div>
+            </div>
+
+            <div class="d-flex flex-wrap gap-2 mb-4">
+              <!-- <span
+                class="d-flex align-items-center gap-1 bg-default text-black px-2 py-1 rounded small"
+              >
+                <mat-icon class="material-symbols-outlined">lightbulb</mat-icon> Iluminação LED
+              </span>
+              <span
+                class="d-flex align-items-center gap-1 bg-default text-black px-2 py-1 rounded small"
+              >
+                <mat-icon class="material-symbols-outlined">layers</mat-icon> Piso Rápido
+              </span>
+              <span
+                class="d-flex align-items-center gap-1 bg-default text-black px-2 py-1 rounded small"
+              >
+                <mat-icon class="material-symbols-outlined">roofing</mat-icon> Coberta
+              </span> -->
+            </div>
+
+            <div
+              class="mt-auto pt-3 border-t d-flex align-items-center justify-content-between"
+              style="border-top: 1px solid #2d2d2d"
             >
-              <mat-icon class="material-symbols-outlined">info</mat-icon>
-            </button>
-            <button
-              class="btn border-default px-4 py-2 rounded-3 fw-bold transition-all active:scale-95"
-            >
-              Reservar
-            </button>
+              <div>
+                <span
+                  class="d-block text-white text-uppercase tracking-wider small"
+                  style="font-size: 11px"
+                  >Preço por hora</span
+                >
+                <span class="h5 text-default fw-bold mb-0">R$ {{ court.price }}</span>
+              </div>
+              <div class="d-flex gap-2">
+                <button
+                  class="p-2 border-default rounded-3 text-default transition-all d-flex align-items-center"
+                >
+                  <mat-icon class="material-symbols-outlined">info</mat-icon>
+                </button>
+                <button
+                  class="btn border-default px-4 py-2 rounded-3 fw-bold transition-all active:scale-95"
+                >
+                  Reservar
+                </button>
+              </div>
+            </div>
           </div>
-        </div>
+        </article>
       </div>
-    </article>
-  </div>
+    } @empty {
+      <div class="sem-quadras">
+        <p>Você ainda não tem nenhuma quadra cadastrada.</p>
+        <button (click)="changeRoute('cadastrar')">Cadastrar Minha Primeira Quadra</button>
+      </div>
+    }
+  }
 </div>

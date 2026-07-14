@@ -1,4 +1,4 @@
-import { FormControl } from "@angular/forms";
+import { FormControl } from '@angular/forms';
 
 export interface CourtRegisterFormModel {
   court_name: string;
@@ -12,11 +12,9 @@ export interface CourtRegisterFormModel {
   city: string;
   state: string;
   descricao: string;
-  resources: {
-    temCobertura: boolean;
-    temIluminacao: boolean;
-    temVestiario: boolean;
-  }
+  temCobertura: boolean;
+  temIluminacao: boolean;
+  temVestiario: boolean;
 }
 
 export interface CourtRegisterFormControls {
